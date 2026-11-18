@@ -61,6 +61,7 @@ These are the primary skills triggered directly via chat prompts or slash comman
 | **Build** | `/implement` | `implement` | Implements tickets from specs adhering strictly to pre-agreed architectural seams. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | **Review** | `/code-review` | `code-review` | Spawns two parallel subagents: one audits codebase standards, the other audits spec fidelity. | [mattpocock/skills](https://github.com/mattpocock/skills) |
 | **Control**| `/desktop` | `desktop` | Direct Linux Mint / Cinnamon X11 desktop UI control and application automation via `deskctl`. | **First-Party** (`skills/desktop`) |
+| **Visualize**| `/excalidraw-animate` | `excalidraw-animate` | Generates self-contained, pitch-black animated Excalidraw architecture diagrams with hand-drawn aesthetics. | **First-Party** (`skills/excalidraw-animate`) |
 
 ---
 
@@ -86,6 +87,15 @@ The `desktop` skill allows agents to interact with a Linux desktop (Linux Mint /
 
 ---
 
+## 🎨 First-Party Skill: Hand-Drawn Diagrams (`excalidraw-animate`)
+
+The `excalidraw-animate` skill creates self-contained HTML architecture diagrams with pure Excalidraw hand-drawn aesthetics:
+- **Pitch-Black Monochromatic Theme**: Pure `#121212` canvas with white strokes and functional accents (`#30d158` green, `#ff9f0a` orange).
+- **Physical System Metaphors**: Byte tapes, ring buffers, funnels, orbits, and queues instead of generic boxes.
+- **Clean Interactive Output**: Generates stand-alone `.html` visualizations with play/pause step animation.
+
+---
+
 ## 📁 Repository Structure
 
 ```
@@ -96,13 +106,15 @@ sarthak-skills/
 ├── skills/
 │   ├── sarthak-skills/
 │   │   └── SKILL.md                   # Meta-skill for agent discovery
-│   └── desktop/                       # Complete portable desktop automation skill
-│       ├── SKILL.md
-│       ├── apps/                      # App-specific workflows (browser, terminal, files)
-│       ├── auth/                      # Credential and privilege elevation rules
-│       ├── core/                      # Screen mapping and window topology
-│       ├── security/                  # Privacy filters and killswitch controls
-│       └── scripts/                   # ATSPI helpers and daemon scripts
+│   ├── desktop/                       # Complete portable desktop automation skill
+│   │   ├── SKILL.md
+│   │   ├── apps/                      # App-specific workflows (browser, terminal, files)
+│   │   ├── auth/                      # Credential and privilege elevation rules
+│   │   ├── core/                      # Screen mapping and window topology
+│   │   ├── security/                  # Privacy filters and killswitch controls
+│   │   └── scripts/                   # ATSPI helpers and daemon scripts
+│   └── excalidraw-animate/            # Hand-drawn animated technical architecture diagrams
+│       └── SKILL.md
 ```
 
 ---

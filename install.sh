@@ -36,23 +36,24 @@ for s in $UPSTREAM_SKILLS; do
 done
 $RUNNER skills add mattpocock/skills "${UPSTREAM_ARGS[@]}" --agent "$AGENT" -y "${EXTRA[@]}"
 
-# 2. First-Party Custom Skills (desktop & sarthak-skills meta-skill)
-echo "==> Installing first-party skills (desktop, sarthak-skills)..."
+# 2. First-Party Custom Skills (desktop, excalidraw-animate, sarthak-skills)
+echo "==> Installing first-party skills (desktop, excalidraw-animate, sarthak-skills)..."
 if [ -n "$SCRIPT_DIR" ] && [ -d "$SCRIPT_DIR/skills/desktop" ]; then
   # Local install from repository checkout
-  $RUNNER skills add "$SCRIPT_DIR" --skill desktop --skill sarthak-skills --agent "$AGENT" -y "${EXTRA[@]}"
+  $RUNNER skills add "$SCRIPT_DIR" --skill desktop --skill excalidraw-animate --skill sarthak-skills --agent "$AGENT" -y "${EXTRA[@]}"
 else
   # Remote install from GitHub
-  $RUNNER skills add "chill-czar/sarthak-skills" --skill desktop --skill sarthak-skills --agent "$AGENT" -y "${EXTRA[@]}"
+  $RUNNER skills add "chill-czar/sarthak-skills" --skill desktop --skill excalidraw-animate --skill sarthak-skills --agent "$AGENT" -y "${EXTRA[@]}"
 fi
 
 echo ""
 echo "✅ Done! Successfully installed sarthak-skills for $AGENT."
 echo "Direct Driver Skills ready:"
-echo "  • /grill-with-docs  (Pressure-test designs + write ADRs)"
-echo "  • /grill-me         (Fast adversarial plan review)"
-echo "  • /to-spec          (Synthesize discussion into spec)"
-echo "  • /to-tickets       (Break spec into atomic tickets)"
-echo "  • /implement        (Execute code with strict TDD)"
-echo "  • /code-review      (Dual standards & spec review)"
-echo "  • /desktop          (Linux Mint / Cinnamon X11 control)"
+echo "  • /grill-with-docs      (Pressure-test designs + write ADRs)"
+echo "  • /grill-me             (Fast adversarial plan review)"
+echo "  • /to-spec              (Synthesize discussion into spec)"
+echo "  • /to-tickets           (Break spec into atomic tickets)"
+echo "  • /implement            (Execute code with strict TDD)"
+echo "  • /code-review          (Dual standards & spec review)"
+echo "  • /desktop              (Linux Mint / Cinnamon X11 control)"
+echo "  • /excalidraw-animate   (Hand-drawn animated architecture diagrams)"
